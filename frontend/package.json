@@ -1,0 +1,46 @@
+{
+  "name": "grocerybag-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for grocerybag",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development --watch --entry ./src/index.js --output-path ./static/frontend",
+    "build": "webpack --mode production --entry ./src/index.js --output-path ./static/frontend"
+  },
+  "author": "Muksam Limboo",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-react": "^7.12.10",
+    "babel-loader": "^8.2.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "webpack": "^5.15.0",
+    "webpack-cli": "^4.3.1"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "bootstrap": "^4.5.3",
+    "bootstrap-icons": "^1.5.0",
+    "css-loader": "^5.0.1",
+    "date-fns": "^2.16.1",
+    "file-loader": "^6.2.0",
+    "jquery": "^3.5.1",
+    "js-file-download": "^0.4.12",
+    "popper.js": "^1.16.1",
+    "postcss-loader": "^4.1.0",
+    "prop-types": "^15.7.2",
+    "react-alert": "^7.0.2",
+    "react-alert-template-basic": "^1.0.0",
+    "react-redux": "^7.2.2",
+    "react-router-dom": "^5.2.0",
+    "react-transition-group": "^4.4.1",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0",
+    "source-map-loader": "^2.0.0",
+    "style-loader": "^2.0.0"
+  }
+}
