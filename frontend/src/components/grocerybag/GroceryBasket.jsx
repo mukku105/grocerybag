@@ -398,7 +398,6 @@ export class GroceryBasket extends Component {
                     </div>
                 </div>
 
-                <hr />
             </Fragment >
         )
     }

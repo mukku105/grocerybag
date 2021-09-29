@@ -55,6 +55,17 @@ class App extends Component {
                         </Fragment>
                     </Router>
                 </AlertProvider>
+
+                <div className="mb-4">
+                    &nbsp;
+                </div>
+                <hr />
+                <div>
+                    <p className="text-center">
+                        Made With 💜 by Muksam Limboo | Grocery Bag, 2021
+                    </p>
+                </div>
+
             </Provider>
         );
     }
