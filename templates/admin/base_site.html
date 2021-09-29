@@ -1,0 +1,30 @@
+{% extends "admin/base.html" %}
+{% block title %} {% if subtitle %}
+{{subtitle}} | {% endif %}{{ title }} | {{ site_title|default:_('Grocery Bag Admin') }}
+{%endblock %}
+{% block branding %}
+<h1 id="site-name" style="
+    font-size: 16px;
+    text-align: center;
+    background-color: black;
+    padding: 5px 15px 5px 15px;
+    border-radius: 10px;
+  ">
+  <a href="{% url 'admin:index' %}">Reading Right's Grocery Bag</a>
+</h1>
+{% endblock %} {% block nav-global %} {% endblock %} {% block footer %}
+<div style="
+    text-align: center;
+    padding: 3px;
+    margin: 25px 5px 5px 5px;
+    border-radius: 10px;
+    background-color: cornsilk;
+  ">
+  <h5>
+    Made with ✨ by
+    <a target="_blank" href="https://www.linkedin.com/in/muksam-limboo/">
+      Muksam Limboo</a>
+  </h5>
+</div>
+
+{% endblock %}

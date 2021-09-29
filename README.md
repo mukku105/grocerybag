@@ -80,3 +80,27 @@ mukku105.pythonanywhere.com
 > django-admin startapp api
 > django-admin startapp frontend
 ```
+
+## - Install `django-filter`
+
+```
+> pip install django-filter
+```
+
+## - Add `django_filters` to `INSTALLED_APPS`
+
+```
+INSTALLED_APPS = [
+    ...
+    'django_filters',
+]
+```
+
+## - Add `filter_backends` in `ViewSet`
+
+```
+class <class_name>(generic.ListAPIView):
+    ...
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['category', 'item']
+```

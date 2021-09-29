@@ -1,3 +1,4 @@
+.vscode/*
 frontend/node_modules/*
 frontend/__pycache__
 frontend/migrations/__pycache__
@@ -6,3 +7,4 @@ accounts/migrations/__pycache__
 api/__pycache__
 api/migrations/__pycache__
 readingright_intern_grocerybag/__pycache__
+*.log

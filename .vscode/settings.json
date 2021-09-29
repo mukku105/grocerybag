@@ -3,10 +3,17 @@
         {
             "previewLimit": 50,
             "driver": "SQLite",
-            "name": "db.sqlite3",
+            "name": "SQLITE3",
             "group": "internship_gorcerybag",
             "database": "${workspaceFolder:readingright_intern_grocerybag}/db.sqlite3"
         }
     ],
-    "sqltools.useNodeRuntime": true
+    "sqltools.useNodeRuntime": true,
+    "beautify.language": {
+        "html": [
+            "htm",
+            "html",
+            "django-html"
+        ]
+     },
 }
