@@ -3,6 +3,7 @@ import {
   DELETE_ITEM,
   ADD_ITEM,
   UPDATE_ITEM,
+  FILTER_ITEMS,
   LOADING_TARGET,
   GET_ERRORS,
 } from "../../actions/types";
@@ -38,6 +39,12 @@ export default function (state = initialState, action) {
         items: state.items.map((item) =>
           item.id === action.payload.id ? action.payload : item
         ),
+        isLoading: false,
+      };
+    case FILTER_ITEMS:
+      return {
+        ...state,
+        items: action.payload,
         isLoading: false,
       };
     case LOADING_TARGET:

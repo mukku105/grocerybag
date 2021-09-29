@@ -22,10 +22,16 @@ class item_ViewSet(viewsets.ModelViewSet):
     serializer_class = item_serializer
 
     def get_queryset(self):
-        status_filter = self.request.query_params.get('status', None)
+        status_filter = self.request.query_params.get('status', '')
+        scheduled_filter = self.request.query_params.get('scheduled_date', '')
 
-        if status_filter is not None:
+        if status_filter != '':
+            if scheduled_filter!='':
+                return self.request.user.items_created_by.all().filter(status=status_filter, scheduled_date__date=scheduled_filter)
             return self.request.user.items_created_by.all().filter(status=status_filter)
+        elif scheduled_filter != '':
+            return self.request.user.items_created_by.all().filter(scheduled_date__date=scheduled_filter)
+
         return (self.request.user.items_created_by.all()).order_by('-created_on')
         
     def perform_create(self, serializer):

@@ -6,6 +6,7 @@ import {
   DELETE_ITEM,
   ADD_ITEM,
   UPDATE_ITEM,
+  FILTER_ITEMS,
   LOADING_TARGET,
   GET_ERRORS,
 } from "../types";
@@ -66,7 +67,7 @@ export const addGroceryItem = (item) => (dispatch, getState) => {
 //UPDATE GROCERY ITEM
 export const updateGroceryItem = (item) => (dispatch, getState) => {
   axios
-    .put(`/api/grocery-bag/${item.id}`, item, tokenConfig(getState))
+    .patch(`/api/grocery-bag/${item.id}/`, item, tokenConfig(getState))
     .then((res) => {
       dispatch(createMessage({ updateItem: "Item Updated" }));
       dispatch({
@@ -78,3 +79,22 @@ export const updateGroceryItem = (item) => (dispatch, getState) => {
       dispatch(returnErrors(err.response.data, err.response.status))
     );
 };
+
+//FILTER GROCERY ITEMS
+export const filterGroceryItems =
+  (status, scheduled_date) => (dispatch, getState) => {
+    axios
+      .get(
+        `/api/grocery-bag?status=${status}&scheduled_date=${scheduled_date}`,
+        tokenConfig(getState)
+      )
+      .then((res) => {
+        dispatch({
+          type: FILTER_ITEMS,
+          payload: res.data,
+        });
+      })
+      .catch((err) =>
+        dispatch(returnErrors(err.response.data, err.response.status))
+      );
+  };

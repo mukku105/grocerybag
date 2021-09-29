@@ -18,7 +18,11 @@ export default function Dashboard() {
                     <GroceryBasket />
                 </div>
             </div>
-            <hr />
+
+            <p className="text-center">
+                Made With 💜 by Muksam Limboo | Grocery Bag, 2021
+
+            </p>
         </Fragment>
     )
 }
